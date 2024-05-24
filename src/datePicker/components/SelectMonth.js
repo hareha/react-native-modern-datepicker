@@ -199,7 +199,7 @@ const styles = theme =>
     item: {
       width: '30%',
       marginHorizontal: '1.5%',
-      paddingVertical: 8,
+      paddingVertical: 15,
       marginVertical: 7,
       alignItems: 'center',
     },
