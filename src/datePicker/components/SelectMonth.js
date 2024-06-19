@@ -128,6 +128,7 @@ const SelectMonth = () => {
           returnKeyType="done"
           autoCorrect={false}
           blurOnSubmit
+          editable={false}
           selectionColor={options.mainColor}
           onChangeText={onChangeYear}
         />
@@ -149,12 +150,12 @@ const SelectMonth = () => {
             <TouchableOpacity
               key={item}
               activeOpacity={0.8}
-              style={[style.item, currentMonth === item + 1 && style.selectedItem]}
+              style={[style.item, currentMonth === item + 1 && year===utils.getMonthYearText(mainState.activeDate).split(' ')[1] && style.selectedItem]}
               onPress={() => !disabled && onSelectMonth(item)}>
               <Text
                 style={[
                   style.itemText,
-                  currentMonth === item + 1 && style.selectedItemText,
+                  currentMonth === item + 1 && year===utils.getMonthYearText(mainState.activeDate).split(' ')[1] && style.selectedItemText,
                   disabled && style.disabledItemText,
                 ]}>
                 {utils.getMonthName(item)}
@@ -194,7 +195,7 @@ const styles = theme =>
     },
     monthList: {
       flexWrap: 'wrap',
-      margin: 25,
+      margin: 15,
     },
     item: {
       width: '30%',
